@@ -1,0 +1,53 @@
+package com.Human.human;
+
+import junit.framework.TestCase;
+
+public class ComparatorTestByIncome extends TestCase {
+
+	
+	public void testGreater() {
+		
+		Human h1 = new Human("Shajedul",25,25000);
+				
+		Human h2 = new Human("Monem", 26, 20000);
+		
+		incomeCompare ic = new incomeCompare();
+		
+		int result = ic.compare(h1, h2);
+		
+		assertTrue("Expected to be greater than", result>=0);
+		
+		
+	}
+	
+	public void testLower() {
+		
+		Human h1 = new Human("Shajedul",25,20000);
+				
+		Human h2 = new Human("Monem", 26, 25000);
+		
+		incomeCompare ic = new incomeCompare();
+		
+		int result = ic.compare(h1, h2);
+		
+		assertTrue("Expected to be lower than", result<=0);
+		
+		
+	}
+	
+	public void testEqual() {
+		
+		Human h1 = new Human("Shajedul",25,20000);
+				
+		Human h2 = new Human("Monem", 26, 20000);
+		
+		incomeCompare ic = new incomeCompare();
+		
+		int result = ic.compare(h1, h2);
+		
+		assertTrue("Expected to be equal", result==0);
+		
+		
+	}
+
+}
